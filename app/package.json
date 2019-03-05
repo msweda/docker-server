@@ -1,0 +1,19 @@
+{
+  "name": "stockx-server-app",
+  "version": "1.0.0",
+  "description": "A node express server with a postgress db that manages true-to-size shoe fit",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "4.16.4",
+    "express-validator": "5.3.1",
+    "module-alias": "2.2.0",
+    "pg": "7.8.1"
+  },
+  "_moduleAliases": {
+    "@src"          : "src",
+    "@common"       : "src/common",
+    "@true-to-size" : "src/true-to-size"
+  }
+}

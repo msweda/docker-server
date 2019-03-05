@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  db:
+    build: './db'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: open-sesame
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+  app:
+    build: './app'
+    environment:
+      PGHOST: db
+      PGPORT: 5432
+      PGUSER: postgres
+      PGPASSWORD: open-sesame
+      PGDATABASE: postgres
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  
